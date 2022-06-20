@@ -1,6 +1,6 @@
 import readline from 'readline';
 
-function escreva(...a) {
+function print(...a) {
   if (Array.isArray(a)) {
     console.log(a.join(''));
   } else {
@@ -8,19 +8,18 @@ function escreva(...a) {
   }
 }
 
-function leia(mensagem) {
+function input(question) {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
   return new Promise((resolve) => {
-    const question = mensagem ? mensagem + ' ' : '';
-    rl.question(question, function (name) {
+    rl.question(question || '', function (name) {
       rl.close();
       resolve(name);
     });
   });
 }
 
-export { escreva, leia };
+export { print, input };

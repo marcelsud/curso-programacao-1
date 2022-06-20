@@ -1,6 +1,6 @@
-import { escreva, leia } from './modules/io.mjs';
+import { print, input } from './modules/io.mjs';
 
-const nome = await leia('Qual é o seu nome?');
-const cidade = await leia('Onde você mora?');
+const nome = await input('Qual é o seu nome? ');
+const cidade = await input('Onde você mora?\n');
 
-escreva(`Bem vindo ${nome} de ${cidade}`);
+print(`Bem vindo ${nome} de ${cidade}`);
